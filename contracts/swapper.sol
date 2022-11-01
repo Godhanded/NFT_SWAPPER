@@ -147,6 +147,12 @@ contract nftSwapper {
         s_dealArrays[_swapId] = publishedDeal;
     }
 
+    function withdraw() external {
+        if (msg.sender != s_owner) revert nftSwapper__notOwner();
+        (bool sent, ) = payable(msg.sender).call{value: address(this).balance}("");
+        if (!sent) revert nftSwapper__transferFailed();
+    }
+
     
     
 }
