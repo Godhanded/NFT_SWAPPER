@@ -153,6 +153,12 @@ contract nftSwapper {
         if (!sent) revert nftSwapper__transferFailed();
     }
 
-    
+    function getDeals() external view returns (deal[] memory) {
+        return s_dealArrays;
+    }
+
+    function getDeal(uint256 _swapId) external view returns (deal memory) {
+        return s_deals[_swapId];
+    }
     
 }
