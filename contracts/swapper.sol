@@ -1,14 +1,3 @@
-// deals .
-// post a deal:pending and fulfilled .
-//- collect nft .
-//-specify address of expercted deal nft .
-//- specify number of nfts from address .
-// publishing fee: is collected if not fulfilled .
-
-// view deals .
-// fullfill deal .
-// if error revert .
-
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.12;
 
