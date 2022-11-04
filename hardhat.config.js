@@ -11,7 +11,7 @@ require("dotenv").config();
 const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL;
 const PRIVATE_KEY1 = process.env.PRIVATE_KEY;
 const COINMARKETCAP_API = process.env.COINMARKETCAP_API;
-const ETHERSCAN_API = process.env.ETHERSCAN_API;
+const BLOCKSCAN_API = process.env.BLOCKSCAN_API;
 module.exports = {
     defaultNetwork: "hardhat",
     networks: {
@@ -29,6 +29,13 @@ module.exports = {
             //     mnemonic: mnemonic
             // },
         },
+        polygon: {
+            url: process.env.POLYGONCHAIN,//quicknode
+            accounts: [process.env.PRIVATE_KEY],
+            chainId: 80001,
+            blockConfirmations: 3,
+        },
+      
     },
     solidity: {
         compilers: [{ version: "0.8.17" }, { version: "0.8.7" }, { version: "0.4.24" }],
@@ -40,7 +47,7 @@ module.exports = {
             1: 0,
             5: 0,
         },
-        player: {
+        burner: {
             default: 1,
         },
     },
@@ -53,11 +60,9 @@ module.exports = {
         noColors: true,
     },
     mocha: {
-        timeout: 500000, //500 max seconds
+        timeout: 500000,
     },
     etherscan: {
-        apiKey: {
-            goerli: ETHERSCAN_API,
-        },
+        apiKey: BLOCKSCAN_API
     },
 };

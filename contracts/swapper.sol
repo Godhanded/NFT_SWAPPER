@@ -31,14 +31,18 @@ contract nftSwapper {
     mapping(uint256 => deal) s_deals;
 
     uint256 private s_count;
+    string private s_name;
 
     uint256[] private s_emptyArray;
-    address private s_owner;
+    address private immutable i_owner;
+
 
     deal[] public s_dealArrays;
 
-    constructor() {
-        s_owner = msg.sender;
+    constructor(string memory _name) {
+        s_name= _name;
+        i_owner = msg.sender;
+        
     }
 
     function createDeal(
@@ -137,7 +141,7 @@ contract nftSwapper {
     }
 
     function withdraw() external {
-        if (msg.sender != s_owner) revert nftSwapper__notOwner();
+        if (msg.sender != i_owner) revert nftSwapper__notOwner();
         (bool sent, ) = payable(msg.sender).call{value: address(this).balance}("");
         if (!sent) revert nftSwapper__transferFailed();
     }
@@ -150,4 +154,7 @@ contract nftSwapper {
         return s_deals[_swapId];
     }
     
+    function name()public view returns(string memory) {
+        return s_name;
+    }
 }
