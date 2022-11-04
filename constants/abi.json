@@ -1,1 +1,133 @@
-[]
+[
+    {
+        "type": "constructor",
+        "payable": false,
+        "inputs": [{ "type": "string", "name": "_name" }]
+    },
+    {
+        "type": "error",
+        "name": "nftSwapper__alreadyFullfilledOrInvalidAmount",
+        "inputs": []
+    },
+    { "type": "error", "name": "nftSwapper__fullfilledOrNotOwner", "inputs": [] },
+    { "type": "error", "name": "nftSwapper__invalidAmount", "inputs": [] },
+    { "type": "error", "name": "nftSwapper__notOwner", "inputs": [] },
+    { "type": "error", "name": "nftSwapper__transferFailed", "inputs": [] },
+    {
+        "type": "function",
+        "name": "closeDeal",
+        "constant": false,
+        "payable": false,
+        "inputs": [{ "type": "uint256", "name": "_swapId" }],
+        "outputs": []
+    },
+    {
+        "type": "function",
+        "name": "createDeal",
+        "constant": false,
+        "stateMutability": "payable",
+        "payable": true,
+        "inputs": [
+            { "type": "address", "name": "_sourceAddr" },
+            { "type": "uint256[]", "name": "_ids" },
+            { "type": "address", "name": "_expectedNftaddress" },
+            { "type": "uint256", "name": "_amountNftExpected" },
+            { "type": "string", "name": "_message" }
+        ],
+        "outputs": []
+    },
+    {
+        "type": "function",
+        "name": "fullfillDeal",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+            { "type": "uint256", "name": "_swapId" },
+            { "type": "address", "name": "_expectedAddr" },
+            { "type": "uint256[]", "name": "_ids" }
+        ],
+        "outputs": []
+    },
+    {
+        "type": "function",
+        "name": "getDeal",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [{ "type": "uint256", "name": "_swapId" }],
+        "outputs": [
+            {
+                "type": "tuple",
+                "components": [
+                    { "type": "address", "name": "owner" },
+                    { "type": "address", "name": "sourceNftAddress" },
+                    { "type": "address", "name": "expectedNftaddress" },
+                    { "type": "uint256[]", "name": "sourceTokenIds" },
+                    { "type": "uint256[]", "name": "receivedTokenIds" },
+                    { "type": "uint256", "name": "amountNftExpected" },
+                    { "type": "uint256", "name": "swapId" },
+                    { "type": "string", "name": "message" },
+                    { "type": "uint8", "name": "STATE" }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "function",
+        "name": "getDeals",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+            {
+                "type": "tuple[]",
+                "components": [
+                    { "type": "address", "name": "owner" },
+                    { "type": "address", "name": "sourceNftAddress" },
+                    { "type": "address", "name": "expectedNftaddress" },
+                    { "type": "uint256[]", "name": "sourceTokenIds" },
+                    { "type": "uint256[]", "name": "receivedTokenIds" },
+                    { "type": "uint256", "name": "amountNftExpected" },
+                    { "type": "uint256", "name": "swapId" },
+                    { "type": "string", "name": "message" },
+                    { "type": "uint8", "name": "STATE" }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "function",
+        "name": "name",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [{ "type": "string" }]
+    },
+    {
+        "type": "function",
+        "name": "s_dealArrays",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [{ "type": "uint256" }],
+        "outputs": [
+            { "type": "address", "name": "owner" },
+            { "type": "address", "name": "sourceNftAddress" },
+            { "type": "address", "name": "expectedNftaddress" },
+            { "type": "uint256", "name": "amountNftExpected" },
+            { "type": "uint256", "name": "swapId" },
+            { "type": "string", "name": "message" },
+            { "type": "uint8", "name": "STATE" }
+        ]
+    },
+    {
+        "type": "function",
+        "name": "withdraw",
+        "constant": false,
+        "payable": false,
+        "inputs": [],
+        "outputs": []
+    }
+]

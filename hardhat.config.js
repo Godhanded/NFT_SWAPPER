@@ -30,12 +30,11 @@ module.exports = {
             // },
         },
         polygon: {
-            url: process.env.POLYGONCHAIN,//quicknode
+            url: process.env.POLYGONCHAIN, //quicknode
             accounts: [process.env.PRIVATE_KEY],
             chainId: 80001,
             blockConfirmations: 3,
         },
-      
     },
     solidity: {
         compilers: [{ version: "0.8.17" }, { version: "0.8.7" }, { version: "0.4.24" }],
@@ -63,6 +62,6 @@ module.exports = {
         timeout: 500000,
     },
     etherscan: {
-        apiKey: BLOCKSCAN_API
+        apiKey: BLOCKSCAN_API,
     },
 };

@@ -36,13 +36,11 @@ contract nftSwapper {
     uint256[] private s_emptyArray;
     address private immutable i_owner;
 
-
     deal[] public s_dealArrays;
 
     constructor(string memory _name) {
-        s_name= _name;
+        s_name = _name;
         i_owner = msg.sender;
-        
     }
 
     function createDeal(
@@ -153,8 +151,8 @@ contract nftSwapper {
     function getDeal(uint256 _swapId) external view returns (deal memory) {
         return s_deals[_swapId];
     }
-    
-    function name()public view returns(string memory) {
+
+    function name() public view returns (string memory) {
         return s_name;
     }
 }
