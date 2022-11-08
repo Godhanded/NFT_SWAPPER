@@ -6,17 +6,17 @@ const Home = () => {
     return (
         <div className="flex flex-col justify-center items-center min-h-[90vh] w-full lg:-mt-10">
             <h1 className='text-4xl text-center tracking-tight font-bold text-slate-800 max-w-7xl sm:text-5xl md:text-6xl lg:text-8xl'>
-            The React Framework for Production
+            The Standard Swap-Tool for Everyone
             </h1>
             <p className='text-center max-w-4xl mt-4 text-slate-500'>
-            Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces.
-            This template will help you jump-start any project.
+                Token Swapper enables every NFT holder to set up a swap with their preferred token 
+                to swap and a request for another token to swap or another token plus coins. Fully onchain and free for all
             </p>
 
             {/* CTA buttons */}
             <div className='flex flex-col sm:flex-row gap-4 mt-8 px-4 w-full justify-center'>
                 <Link
-                    to='/'
+                    to='/dashboard'
                     className='inline-flex items-center justify-center w-full sm:w-fit px-10 py-3 border border-transparent text-base font-medium rounded-md text-white bg-slate-800 hover:bg-slate-900'
                 >
                     Get started

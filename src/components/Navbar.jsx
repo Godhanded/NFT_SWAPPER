@@ -13,43 +13,39 @@ import { TWLogoBlack } from '../assets'
 export default function Navbar() {
     return (
         <Popover className="relative bg-white">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6">
+            <div className="px-4 sm:px-6 md:px-10">
                 <div className="flex items-center justify-between py-6  md:space-x-10">
                     <div className="flex ">
                         <Link to="/">
                             <span className="sr-only">Your Company</span>
-                            <img
-                                className="h-8 w-auto sm:h-10"
-                                src={TWLogoBlack}
-                                alt=""
-                            />
+                            <img className="h-8 w-auto sm:h-10" src={TWLogoBlack} alt="" />
                         </Link>
                     </div>
                     <Popover.Group as="nav" className="hidden space-x-10 md:flex">
-                        <Link to="/" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                            Pricing
+                        <Link to="/dashboard" className="text-base font-medium text-gray-500 hover:text-gray-900">
+                            Dashboard
                         </Link>
                         <Link to="/" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                            Docs
+                            Chat with us
                         </Link>
                         <Link to="/" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                            Company
+                            Profile
                         </Link>
                         <Link to="/" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                            Blog
+                            Sign in
                         </Link>
                         <Link to="/" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                            Profile 
+                            Sign up
                         </Link>
                     </Popover.Group>
                     <div className='flex gap-x-2 items-center'>
-                    <ConnectButton />
-                    <div className="-my-2 -mr-2 md:hidden">
-                        <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black">
-                            <span className="sr-only">Open menu</span>
-                            <Bars3Icon className="h-8 w-8 text-black" aria-hidden="true" />
-                        </Popover.Button>
-                    </div>
+                        <ConnectButton chainStatus={'icon'} />
+                        <div className="-my-2 -mr-2 md:hidden">
+                            <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black">
+                                <span className="sr-only">Open menu</span>
+                                <Bars3Icon className="h-8 w-8 text-black" aria-hidden="true" />
+                            </Popover.Button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -88,21 +84,20 @@ export default function Navbar() {
                         </div>
                         <div className="space-y-6 py-6 px-5">
                             <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                                <Link to="/" className="text-base font-medium text-gray-900 hover:text-gray-700">
-                                    Pricing
+                                <Link to="/dashboard" className="text-base font-medium text-gray-500 hover:text-gray-900">
+                                    Dashboard
                                 </Link>
-
-                                <Link to="/" className="text-base font-medium text-gray-900 hover:text-gray-700">
-                                    Docs
+                                <Link to="/" className="text-base font-medium text-gray-500 hover:text-gray-900">
+                                    Chat with us
                                 </Link>
-                                <Link to="/" className="text-base font-medium text-gray-900 hover:text-gray-700">
-                                    Company
-                                </Link>
-                                <Link to="/" className="text-base font-medium text-gray-900 hover:text-gray-700">
-                                    Blog
-                                </Link>
-                                <Link to="/" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                                <Link to="/" className="text-base font-medium text-gray-500 hover:text-gray-900">
                                     Profile
+                                </Link>
+                                <Link to="/" className="text-base font-medium text-gray-500 hover:text-gray-900">
+                                    Sign in
+                                </Link>
+                                <Link to="/" className="text-base font-medium text-gray-500 hover:text-gray-900">
+                                    Sign up
                                 </Link>
                             </div>
                             <div>

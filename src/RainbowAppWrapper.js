@@ -8,14 +8,14 @@ import { publicProvider } from 'wagmi/providers/public';
 
 const { chains, provider, webSocketProvider } = configureChains(
     /**@notice you can add or remove more chains as you see fit*/
-    [chain.mainnet, chain.polygon, chain.polygonMumbai, chain.goerli],
+    [chain.polygon, chain.polygonMumbai],
     /**@notice This is Alchemy's default API key.
       You can get your own at https://dashboard.alchemyapi.io */
     [alchemyProvider({ apiKey: '_gg7wSSi0KMBsdKnGVfHDueq6xMB9EkC', }), publicProvider()]
 );
 
 const { connectors } = getDefaultWallets({
-    appName: 'YOUR_APP_NAME',
+    appName: 'Token Swapper',
     chains,
 });
 
