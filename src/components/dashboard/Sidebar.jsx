@@ -40,14 +40,14 @@ const SideBar = () => {
                             <p>Bond Center</p>
                         </div>
                     </NavLink>
-                    <NavLink to="/dashboard/showcase"
+                    <NavLink to="/dashboard/old-deals"
                         className={({ isActive }) =>
                             "flex items-center gap-x-3 w-full trans " + (isActive ? "bg-[#F00530] bg-opacity-10 text-[#F00530] before-sidebar" : "text-[#333333] bg-transparent")
                         }
                     >
                         <div className="flex items-center gap-2 w-full py-3 px-2">
                             <RiHistoryLine className="h-6 w-6 ml-2" />
-                            <p>Showcase</p>
+                            <p>Fullfilled Deals</p>
                         </div>
                     </NavLink>
                     <NavLink to="/dashboard/settings"

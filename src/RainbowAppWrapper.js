@@ -11,7 +11,15 @@ const { chains, provider, webSocketProvider } = configureChains(
     [chain.polygon, chain.polygonMumbai],
     /**@notice This is Alchemy's default API key.
       You can get your own at https://dashboard.alchemyapi.io */
-    [alchemyProvider({ apiKey: '_gg7wSSi0KMBsdKnGVfHDueq6xMB9EkC', }), publicProvider()]
+    [alchemyProvider({ apiKey: '_gg7wSSi0KMBsdKnGVfHDueq6xMB9EkC', }), publicProvider(),
+
+    // jsonRpcProvider({
+    //     rpc: (chain) => {
+    //       if (chain.id !== chain.polygonMumbai.id) return null
+    //       return { http: process.env.QUICKNODE_RPC }
+    //     },
+    //   })
+    ]
 );
 
 const { connectors } = getDefaultWallets({

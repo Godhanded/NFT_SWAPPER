@@ -2,22 +2,18 @@ import React from "react";
 import { useContractRead } from "wagmi";
 import { abi, contractAddress } from "../../constants";
 
-// const provider = new ethers.providers.JsonRpcProvider(
-//   process.env.QUICKNODE_RPC
-// );
-// quicknode for all providers
-
-const Pool = () => {
+const OldDeals = () => {
   return (
     <div className="h-full md:m-6 lg:m-8 bg-white rounded-md p-4 shadow-lg">
-      <NftPool />
+      Fullfilled Deals
+      <FullfilledDeals/>
     </div>
   );
 };
 
-export default Pool;
+export default OldDeals;
 
-const NftPool = async () => {
+const FullfilledDeals = async () => {
   const { data, isloading, error } = useContractRead(
     {
       addressOrName: contractAddress["80001"],
@@ -25,11 +21,12 @@ const NftPool = async () => {
     },
     "getDeals"
   );
-  if(error) return(<div>Failed to Fetch</div>);
-  const activeDeals= data.filter(filteredArray);
+  if (error) return <div>Failed to Fetch</div>;
+  if(!data) return(<div>No previouse deals</div>)
+  const activeDeals = data.filter(filteredArray);
   return (<div>{[activeDeals]}</div>);
 };
 
 const filteredArray = (arrayItem) => {
-  return arrayItem.STATE == 0;
+  return arrayItem.STATE == 1;
 };
