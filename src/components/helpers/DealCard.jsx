@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
+import OfferedNfts from './OfferedNfts';
 
 const DealCard = ({ deal }) => {
-    const { owner, sourceNftAddress, expectedNftaddress,sourceTokenIds, amountNftExpected, swapId, message, STATE } = deal;
+    const { owner, sourceNftAddress, expectedNftaddress, sourceTokenIds, amountNftExpected, swapId, message, STATE } = deal;
     // //swapID, amountNftExpected are bigNumbers, convert to regular numbers
     // eslint-disable-next-line
     let swapHex = swapId.toHexString(); let swapInt = parseInt(swapHex.substring(2), 16);
@@ -23,12 +24,16 @@ const DealCard = ({ deal }) => {
             <div>My NFT: {sourceNftAddress}</div>
             <div className='mt-4'>My Offered Tokens</div>
             {sourceArray.map((id, index) => (
-                <div key={index}>#NFT {id}</div>
-                ))}
-                <div className='mt-4'>NFT I want: {expectedNftaddress}</div>
-                <div className='mb-4'>Amount of NFTs I want: {amountInt}</div>
-                <div>Message: {message}</div>
-                <div>Status: {stateInfo}</div>
+                <OfferedNfts key={index} id={id} address={sourceNftAddress} />
+            ))}
+            <div className='mt-4'>NFT I want: {expectedNftaddress}</div>
+            <div className='mb-4'>Amount of NFTs I want: {amountInt}</div>
+            <div>Message: {message}</div>
+            <div>Status: {stateInfo}</div>
+
+            {stateInfo === "Pending" && (<div className='w-full'>
+                <button className='bttn lg:px-12 py-3 text-white mt-8 mx-auto'>Fufill Deal</button>
+            </div>)}
         </div>
     )
 }

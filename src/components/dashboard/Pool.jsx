@@ -19,7 +19,8 @@ const Pool = () => {
     const getPool = async () => {
       if (isConnected) {
         const pool = await Swapper.getDeals();
-        setPool(pool);
+        let pool2 = pool.filter((deal) => deal.STATE !== 1);
+        setPool(pool2);
       }
     };
     getPool();

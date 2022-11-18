@@ -19,7 +19,8 @@ const Pool = () => {
     const getPool = async () => {
       if (isConnected) {
         const pool = await Swapper.getDeals();
-        setPool(pool);
+        let pool2 = pool.filter((deal) => deal.STATE !== 0);
+        setPool(pool2);
       }
     };
     getPool();
@@ -30,7 +31,7 @@ const Pool = () => {
 
   return (
     <div className="h-full md:m-6 lg:m-8 bg-white rounded-md p-4 shadow-lg overflow-y-scroll">
-      <div className="text-xl md:text-3xl py-6 font-medium text-slate-700">Current Deals</div>
+      <div className="text-xl md:text-3xl py-6 font-medium text-slate-700">Fufilled Deals</div>
       {pool.map((deal, index) => (
         <div key={index}>
           <DealCard deal={deal} />

@@ -6,3 +6,4 @@ export { default as Pool } from './dashboard/Pool';
 export { default as OldDeals } from './dashboard/OldDeals';
 export { default as BondCenter } from './dashboard/BondCenter';
 export { default as DashboardLayout } from './dashboard/DashboardLayout';
+export { default as Profile } from './Profile'

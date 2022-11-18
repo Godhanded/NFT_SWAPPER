@@ -34,12 +34,9 @@ export const NFTMetadata = async (_nftAddress, _tokenId) => {
 export const getUserERC721NFTS = async (address) => {
     try {
      // Get all NFTs
-        const nfts = await alchemy.getNfts(address);
+        const nfts = await alchemy.nft.getNftsForOwner(address);
      //filter all nfts and check that tokentype is ERC721
-     const ERC721Tokens = nfts.ownedNfts.filter((nft) => {
-         return nft.id.tokenMetadata.tokenType === "ERC721"
-     });
-     console.log(ERC721Tokens);
+     const ERC721Tokens = nfts.ownedNfts.filter((nft) => nft.tokenType === "ERC721");
      return ERC721Tokens;
     }
     catch(err) {

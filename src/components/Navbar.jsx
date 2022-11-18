@@ -28,14 +28,8 @@ export default function Navbar() {
                         <Link to="/" className="text-base font-medium text-gray-500 hover:text-gray-900">
                             Chat with us
                         </Link>
-                        <Link to="/" className="text-base font-medium text-gray-500 hover:text-gray-900">
+                        <Link to="/profile" className="text-base font-medium text-gray-500 hover:text-gray-900">
                             Profile
-                        </Link>
-                        <Link to="/" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                            Sign in
-                        </Link>
-                        <Link to="/" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                            Sign up
                         </Link>
                     </Popover.Group>
                     <div className='flex gap-x-2 items-center'>

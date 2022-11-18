@@ -11,3 +11,6 @@
 .bttn {
     @apply w-fit flex items-center justify-center px-4 bg-[#e26a80] border border-transparent text-base font-medium rounded-md;
 }
+.bttn-2 {
+    @apply w-fit flex items-center justify-center px-4 border border-transparent text-base font-medium rounded-md;
+}
