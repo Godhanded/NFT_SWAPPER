@@ -61,7 +61,7 @@ function Profile() {
       <div className='bg-gray-100'>
         <div className='min-h-[50vh] lg:min-h-[50vh] w-[90vw] mx-auto relative flex flex-col items-center justify-center trans'>
           {/* Profile Picture Holder */}
-          <div className='bg-white w-36 lg:w-48 square aspect-square rounded-full border-4 border-purple-400 overflow-hidden'>
+          <div className='bg-white w-36 lg:w-48 square aspect-square rounded-full border-4 border-purple-700 overflow-hidden'>
           <img src={userNFTS[Math.floor(Math.random() * userNFTS.length)]?.media[0]?.gateway ?? `https://ipfs.io/ipfs/QmRqeD7aSzJvKoz34sAVuBmSgHcG8yUQQcmHZw2BtxUeWz`} alt="" className="h-full w-full object-center object-cover" />
           </div>
           {/* Address Holder */}

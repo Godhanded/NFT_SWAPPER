@@ -33,11 +33,11 @@ const Swap = () => {
   }
 
   const handleSubmit = async (e) => { 
-    console.log(form);
-    console.log(sourceTokenIds);
-    console.log(parseInt(form.amountNftExpected, 16));
-    // console.log(typeof sourceTokenIds[0])
     e.preventDefault();
+    if(sourceTokenIds.length === 0) return toast.error("Please enter the token IDs of the NFTs you are swapping for");
+    if(form.amountNftExpected === 0) return toast.error("Please enter the amount of NFTs you are expecting to receive");
+    if(form.giveNFT === "") return toast.error("Please enter the address of the NFT you want to swap");
+    if(form.receiveNFT === "") return toast.error("Please enter the address of the NFT you wish to receive");
     try {
       await approvalContract.setApprovalForAll("0x86338f4386cce1CD8474De7CdfB379C46f033D50", true);
       const options = {value: ethers.utils.parseEther(`0.001`)};
