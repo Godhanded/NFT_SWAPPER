@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.form-input {
+    @apply w-full border bg-transparent text-sm border-gray-300 px-3 py-2 rounded shadow-sm focus:outline-none
+    focus:border-[#F00530] focus:ring-1 focus:ring-[#F00530];
+}
+
+.bttn {
+    @apply w-fit flex items-center justify-center px-4 bg-[#e26a80] border border-transparent text-base font-medium rounded-md;
+}
