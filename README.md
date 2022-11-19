@@ -8,6 +8,7 @@
     - [Smart Contract](#solidity-smart-contract)
     - [Polygon](#polygon-mumbai)
     - [React chat forum](#react-chat-forum)
+    - [IPFS](#ipfs)
 - [Important Live Links](#importantlive-hosted-project-links)
 - [Team Members](#contributors)
 - [Project Features](#project-features)
@@ -16,9 +17,10 @@
 
 #
 ## Important/Live Hosted Project Links
-- **Hosted URL** > 
+- **Hosted URL** > https://ndegenerate-swap.on.fleek.co/
 
 - **Github** > https://github.com/Godhanded/NFT_SWAPPER
+- **Front end code/Branch** [click here](https://github.com/Godhanded/NFT_SWAPPER/tree/frontend)
 
 - **Contract** > [0x86338f4386cce1CD8474De7CdfB379C46f033D50](https://mumbai.polygonscan.com/address/0x86338f4386cce1CD8474De7CdfB379C46f033D50#readContract)
 
@@ -43,14 +45,19 @@
  | :------------------ | :------------------------- |
  | **`Solidity`**      | Smart contract             |
  | **`React Js`**      | Front End   /chat Forum    |
+ | **`IPFS`**          | Website hosting on.fleek   |
  | **`Polygon Mumbai`**| Deployed on Polygon Testnet|
 
 - ### Solidity Smart Contract
     - NDegenrate Swap makes use of one contract called the nftSwapper [see here](https://github.com/Godhanded/NFT_SWAPPER/blob/main/contracts/swapper.sol), this contract is designed in a such a way as to collect details concerning a swap deal, the expected and source nft addreses, number of nfts expected and deposited, the contracts collects th nfts then performs the swaps when someone else fullfills the swap deal details, a fee of 0.001 is collected to create a swap deal. 
     - before any deal is fullfilled the user has the pportunity to close/cancel th deal and get back their nfts and Matic
 
+- ### IPFS
+    - The NDegenerate swap website was hosted using file coin through on.fleek
+    - see here[ipfs hash](https://ipfs.fleek.co/ipfs/QmWNSvMicrmHF2eEk92EUXtErZ8ix1QfgnCGapLR43NowC)
+
 - ### React Chat Forum
-    - we attached an external chat forum or a chat feature to NDegenerate swap to encourage community and as a place for possible swaps to be discussed before they are created o the contract.see [BondCenter]() in the frontend
+    - we attached an external chat forum or a chat feature to NDegenerate swap to encourage community and as a place for possible swaps to be discussed before they are created o the contract.see [BondCenter](https://ndegenerate-swap.on.fleek.co/dashboard/board-center) in the frontend
 
 - ### Polygon Mumbai
     - The contract was deployed and verified on the polygon chain, a sample nft called numpy was also deployed and used to create deals on the nftswapper contract
